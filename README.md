@@ -115,7 +115,6 @@ If you have input or ideas or would like to get involved, you may:
  - contact me via twitter @jeffbski  - <http://twitter.com/jeffbski>
  - open an issue on github to begin a discussion - <https://github.com/jeffbski/redux-logic-test/issues>
  - fork the repo and send a pull request (ideally with tests) - <https://github.com/jeffbski/redux-logic-test>
- - See the [contributing guide](http://github.com/jeffbski/redux-logic-test/raw/master/CONTRIBUTING.md)
 
 ## Supporters
 
