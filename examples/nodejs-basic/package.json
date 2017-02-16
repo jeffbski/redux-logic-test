@@ -1,0 +1,23 @@
+{
+  "name": "nodejs-basic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "setupAndRun": "npm install && npm start",
+    "start": "node index.js",
+    "test": "npm start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "redux": "^3.6.0",
+    "redux-logic": "^0.11.6",
+    "rxjs": "^5.1.1"
+  },
+  "devDependencies": {
+    "expect": "^1.20.2",
+    "redux-logic-test": "^1.0.1"
+  }
+}

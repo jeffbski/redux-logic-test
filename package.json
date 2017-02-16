@@ -30,6 +30,8 @@
     "build:umd": "cross-env MODTYPE=umd BABEL_ENV=commonjs NODE_ENV=development webpack src/index.js dist/redux-logic-test.js",
     "build:umd:min": "cross-env MODTYPE=umd BABEL_ENV=commonjs NODE_ENV=production webpack src/index.js dist/redux-logic-test.min.js",
     "analyze:umd": "cross-env MODTYPE=umd BABEL_ENV=commonjs NODE_ENV=development webpack src/index.js dist/redux-logic-test.js --json | webpack-bundle-size-analyzer",
+    "build:examples": "cross-env BABEL_ENV=commonjs babel-node examples/buildAll.js",
+    "fullbuild:examples": "cross-env BABEL_ENV=commonjs babel-node examples/fullBuildAll.js",
     "build": "npm run build:commonjs && npm run build:es && npm run build:umd && npm run build:umd:min",
     "prepublish": "npm run clean && npm run check:src && npm run build && check-es3-syntax build-lib/ --kill"
   },
@@ -99,7 +101,7 @@
     "mocha": "^3.1.0",
     "redux": "^3.5.2",
     "redux-logic": "^0.11.6",
-    "rimraf": "^2.3.4",
+    "rimraf": "^2.5.4",
     "rxjs": "^5.0.3",
     "webpack": "^1.9.6"
   },

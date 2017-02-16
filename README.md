@@ -15,8 +15,8 @@ redux-logic-test has peerDependencies of redux and redux-logic (which also needs
 ```bash
 npm install rxjs --save
 npm install redux-logic --save
-npm install redux --saveDev
-npm install redux-logic-test --saveDev
+npm install redux --save
+npm install redux-logic-test --save-dev
 ```
 
 ### ES6 module import
@@ -29,6 +29,21 @@ import { createMockStore } from 'redux-logic-test';
 
 ```js
 const { createMockStore } = require('redux-logic-test').default;
+```
+
+### UMD/CDN use from script tags
+
+The UMD build is mainly used for using in online playgrounds like jsfiddle.
+
+```html
+<script src="https://npmcdn.com/redux@%5E3.6.0/dist/redux.min.js"></script>
+<script src="https://unpkg.com/redux-logic@%5E0.11.6/dist/redux-logic.min.js"></script>
+<script src="https://unpkg.com/redux-logic-test@%5E1.0.1/dist/redux-logic-test.min.js"></script>
+<script type="text/javascript">
+  const { createLogic } = ReduxLogic;
+  const { createMockStore } = ReduxLogicTest;
+  // ready to use createMockStore
+</script>
 ```
 
 ## Usage
@@ -64,7 +79,7 @@ const { createMockStore } = require('redux-logic-test').default;
  - add built-in middleware to track actions that are dispatched
  - make it easy to verify the actions that were dispatched
 
-## Example
+## Quick example
 
 ```js
 import { createMockStore } from 'redux-logic-test';
@@ -111,6 +126,19 @@ store.whenComplete(() => { // runs this fn when all logic is complete
   // call done() for your test when finished
 });
 ```
+
+## Examples
+
+### Live examples
+
+ - [basic usage](https://jsfiddle.net/jeffbski/w3k5t83x/) - simple use or createMockStore to test actions that were dispatched
+ - [async search](https://jsfiddle.net/jeffbski/a2cd2h96/) - async search using createMockStore to setup a test store
+
+### Full examples
+
+ - [browser-basic](./examples/browser-basic/src/index.js) - basic example of using createMockStore to test logic
+ - [nodejs-basic](./examples/nodejs-basic/src/App.test.js) - simple Node.js example using createMockStore via Commonjs to test logic
+
 
 ## Get involved
 
