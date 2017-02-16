@@ -1,0 +1,115 @@
+{
+  "name": "redux-logic-test",
+  "version": "1.0.0",
+  "description": "redux-logic test utilities to facilitate the testing of logic. Create mock store",
+  "main": "build-lib/index.js",
+  "browser": {
+    "main": "dist/redux-logic-test.js"
+  },
+  "browserify": {
+    "transform": [
+      "loose-envify"
+    ]
+  },
+  "module": "build-es/index.js",
+  "jsnext:main": "build-es/index.js",
+  "files": [
+    "dist",
+    "build-lib",
+    "build-es",
+    "src"
+  ],
+  "scripts": {
+    "clean": "rimraf build-lib dist build-es",
+    "lint": "eslint src test",
+    "test": "cross-env BABEL_ENV=commonjs mocha --compilers js:babel-register --recursive -r ./test/setup.js",
+    "test:watch": "npm test -- --watch",
+    "check:src": "npm run lint && npm run test",
+    "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir build-lib",
+    "build:es": "cross-env BABEL_ENV=es babel src --out-dir build-es",
+    "build:umd": "cross-env MODTYPE=umd BABEL_ENV=commonjs NODE_ENV=development webpack src/index.js dist/redux-logic-test.js",
+    "build:umd:min": "cross-env MODTYPE=umd BABEL_ENV=commonjs NODE_ENV=production webpack src/index.js dist/redux-logic-test.min.js",
+    "analyze:umd": "cross-env MODTYPE=umd BABEL_ENV=commonjs NODE_ENV=development webpack src/index.js dist/redux-logic-test.js --json | webpack-bundle-size-analyzer",
+    "build": "npm run build:commonjs && npm run build:es && npm run build:umd && npm run build:umd:min",
+    "prepublish": "npm run clean && npm run check:src && npm run build && check-es3-syntax build-lib/ --kill"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeffbski/redux-logic-test.git"
+  },
+  "keywords": [
+    "redux-logic",
+    "test",
+    "testing",
+    "utilities",
+    "mock",
+    "store"
+  ],
+  "authors": [
+    "Jeff Barczewski <jeff.barczewski@gmail.com> (https://github.com/jeffbski)"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jeffbski/redux-logic-test/issues"
+  },
+  "homepage": "https://github.com/jeffbski/redux-logic-test",
+  "dependencies": {
+    "is-observable": "^0.2.0",
+    "is-promise": "^2.1.0",
+    "loose-envify": "^1.2.0"
+  },
+  "peerDependencies": {
+    "redux": "^3.5.2",
+    "redux-logic": "^0.11.6"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.3.15",
+    "babel-core": "^6.3.15",
+    "babel-eslint": "^7.0.0",
+    "babel-loader": "^6.2.0",
+    "babel-plugin-check-es2015-constants": "^6.3.13",
+    "babel-plugin-transform-es2015-arrow-functions": "^6.3.13",
+    "babel-plugin-transform-es2015-block-scoped-functions": "^6.3.13",
+    "babel-plugin-transform-es2015-block-scoping": "^6.3.13",
+    "babel-plugin-transform-es2015-classes": "^6.3.13",
+    "babel-plugin-transform-es2015-computed-properties": "^6.3.13",
+    "babel-plugin-transform-es2015-destructuring": "^6.3.13",
+    "babel-plugin-transform-es2015-for-of": "^6.3.13",
+    "babel-plugin-transform-es2015-function-name": "^6.3.13",
+    "babel-plugin-transform-es2015-literals": "^6.3.13",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.3.13",
+    "babel-plugin-transform-es2015-object-super": "^6.3.13",
+    "babel-plugin-transform-es2015-parameters": "^6.3.13",
+    "babel-plugin-transform-es2015-shorthand-properties": "^6.3.13",
+    "babel-plugin-transform-es2015-spread": "^6.3.13",
+    "babel-plugin-transform-es2015-sticky-regex": "^6.3.13",
+    "babel-plugin-transform-es2015-template-literals": "^6.3.13",
+    "babel-plugin-transform-es2015-unicode-regex": "^6.3.13",
+    "babel-plugin-transform-es3-member-expression-literals": "^6.5.0",
+    "babel-plugin-transform-es3-property-literals": "^6.5.0",
+    "babel-plugin-transform-object-rest-spread": "^6.3.13",
+    "babel-register": "^6.3.13",
+    "check-es3-syntax-cli": "^0.1.2",
+    "core-js": "^2.4.1",
+    "cross-env": "^2.0.1",
+    "eslint": "^3.2.0",
+    "eslint-config-airbnb-base": "^10.0.1",
+    "eslint-plugin-import": "^2.2.0",
+    "expect": "^1.8.0",
+    "mocha": "^3.1.0",
+    "redux": "^3.5.2",
+    "redux-logic": "^0.11.6",
+    "rimraf": "^2.3.4",
+    "rxjs": "^5.0.3",
+    "webpack": "^1.9.6"
+  },
+  "npmName": "redux-logic-test",
+  "npmFileMap": [
+    {
+      "basePath": "/dist/",
+      "files": [
+        "*.js"
+      ]
+    }
+  ]
+}

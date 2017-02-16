@@ -1,0 +1,31 @@
+{
+  /* Also check test/.eslintrc for test specific config */
+  "extends": "airbnb-base",
+  "rules": {
+    "arrow-body-style": [1, "as-needed"],
+    "arrow-parens": 0,
+    // don't require dangling commas
+    "comma-dangle": 0,
+    "consistent-return": 1,
+    // causing issues with codacy
+    "import/no-unresolved": 0,
+    "indent": 0,
+    "no-nested-ternary": 0,
+    "no-plusplus": 0,
+    "no-shadow": 0,
+    // don't require functions to be declared before use
+    "no-use-before-define": [2, { "functions": false, "classes": true }],
+    // Disable until Flow supports let and const
+    "no-var": 0,
+    "object-property-newline": 0,
+    "padded-blocks": 0,
+    "valid-jsdoc": 2
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "plugins": [
+  ]
+}
