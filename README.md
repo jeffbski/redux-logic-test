@@ -10,8 +10,12 @@ Utilities:
 
 ## Installation
 
+redux-logic-test has peerDependencies of redux and redux-logic (which also needs rxjs)
+
 ```bash
+npm install rxjs --save
 npm install redux-logic --save
+npm install redux --saveDev
 npm install redux-logic-test --saveDev
 ```
 
