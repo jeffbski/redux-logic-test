@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "cross-env": "^2.0.1",
     "react-scripts": "0.9.0",
     "redux-logic-test": "^1.0.1"
   },
@@ -18,7 +19,7 @@
     "setupAndRun": "npm install && npm test",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom --coverage",
+    "test": "cross-env CI=single-run react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
