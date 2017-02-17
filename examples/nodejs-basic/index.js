@@ -4,7 +4,8 @@ const createLogic = require('redux-logic').default.createLogic;
 
 const fooLogic = createLogic({
   type: 'FOO',
-  process({ API, getState, action }, dispatch, done) {
+  process(deps, dispatch, done) {
+    const API = deps.API;
     API.get()
        .then(results => {
          dispatch({ type: 'FOO_SUCCESS', payload: results });
