@@ -28,7 +28,7 @@ import { createMockStore } from 'redux-logic-test';
 ### Commonjs
 
 ```js
-const { createMockStore } = require('redux-logic-test').default;
+const createMockStore = require('redux-logic-test').default.createMockStore;
 ```
 
 ### UMD/CDN use from script tags

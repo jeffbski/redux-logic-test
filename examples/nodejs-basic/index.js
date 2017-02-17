@@ -1,5 +1,5 @@
 const expect = require('expect');
-const { createMockStore } = require('redux-logic-test').default;
+const createMockStore = require('redux-logic-test').default.createMockStore;
 const { createLogic } = require('redux-logic').default;
 
 const fooLogic = createLogic({
