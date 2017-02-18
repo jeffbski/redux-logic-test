@@ -131,8 +131,8 @@ store.whenComplete(() => { // runs this fn when all logic is complete
 
 ### Live examples
 
- - [basic usage](https://jsfiddle.net/jeffbski/w3k5t83x/) - simple use or createMockStore to test actions that were dispatched
- - [async search](https://jsfiddle.net/jeffbski/a2cd2h96/) - async search using createMockStore to setup a test store
+ - [basic usage](https://jsfiddle.net/jeffbski/w3k5t83x/) - simple use or createMockStore to test actions that were dispatched (jsfiddle)
+ - [async search](https://jsfiddle.net/jeffbski/a2cd2h96/) - async search using createMockStore to setup a test store (jsfiddle)
 
 ### Full examples
 
