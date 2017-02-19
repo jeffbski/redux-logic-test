@@ -136,8 +136,8 @@ store.whenComplete(() => { // runs this fn when all logic is complete
 
 ### Full examples
 
- - [browser-basic](/blob/master/examples/browser-basic/src/App.test.js) - basic example of using createMockStore to test logic
- - [nodejs-basic](/blob/master/examples/nodejs-basic/index.js) - simple Node.js example using createMockStore via Commonjs to test logic
+ - [browser-basic](./examples/browser-basic/src/App.test.js) - basic example of using createMockStore to test logic
+ - [nodejs-basic](./examples/nodejs-basic/index.js) - simple Node.js example using createMockStore via Commonjs to test logic
 
 
 ## Get involved
