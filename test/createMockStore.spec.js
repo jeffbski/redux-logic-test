@@ -131,6 +131,26 @@ describe('createMockStore', () => {
         done();
       });
     });
+
+    it('should complete even if no dispatches', done => {
+      store.whenComplete(() => {
+        expect(store.actions).toEqual([]);
+        done();
+      });
+    });
+
+    it('should complete even with non-matching dispatches', done => {
+      store.dispatch({ type: 'BAR' });
+      store.dispatch({ type: 'BAZ' });
+      store.whenComplete(() => {
+        expect(store.actions).toEqual([
+          { type: 'BAR' },
+          { type: 'BAZ' }
+        ]);
+        done();
+      });
+    });
+
   });
 
   describe('w/injectedDeps', () => {
