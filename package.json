@@ -62,7 +62,7 @@
   },
   "peerDependencies": {
     "redux": "^3.5.2",
-    "redux-logic": "^0.11.8"
+    "redux-logic": "^0.11.8 || ^0.12.0"
   },
   "devDependencies": {
     "babel-cli": "^6.3.15",
@@ -100,7 +100,7 @@
     "expect": "^1.8.0",
     "mocha": "^3.1.0",
     "redux": "^3.5.2",
-    "redux-logic": "^0.11.8",
+    "redux-logic": "^0.11.8 || ^0.12.0",
     "rimraf": "^2.5.4",
     "rxjs": "^5.0.3",
     "webpack": "^1.9.6"
