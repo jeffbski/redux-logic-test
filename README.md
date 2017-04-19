@@ -123,7 +123,9 @@ store.whenComplete(() => { // runs this fn when all logic is complete
   // if desired, can reset the actions for more tests
   // store.resetActions(); // clear for more tests
 
-  // call done() for your test when finished
+  // be sure to return the whenComplete promise to your test
+  // or if using a done cb, call it to indicate that your async
+  // test is finished
 });
 ```
 
