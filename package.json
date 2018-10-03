@@ -1,6 +1,6 @@
 {
   "name": "redux-logic-test",
-  "version": "1.0.5",
+  "version": "2.0.0",
   "description": "redux-logic test utilities to facilitate the testing of logic. Create mock store",
   "main": "build-lib/index.js",
   "browser": {
